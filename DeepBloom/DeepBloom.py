@@ -29,18 +29,18 @@ class BloomFilter(object):
         if not capacity > 0:
             raise ValueError("Capacity must be > 0")
         num_slices = int(math.ceil(math.log(1.0 / error_rate, 2)))
-        print error_rate
-        print 1.0 / error_rate
-        print 'num_slices' + str(num_slices)
+        print(error_rate)
+        print(1.0 / error_rate)
+        print('num_slices' + str(num_slices))
 
         bits_per_slice = int(math.ceil(
             (capacity * abs(math.log(error_rate))) /
             (num_slices * (math.log(2) ** 2))))
 
-        print 'numerator'
-        print capacity * abs(math.log(error_rate))
-        print math.log(2) ** 2
-        print num_slices * (math.log(2) ** 2)
+        print('numerator')
+        print((capacity * abs(math.log(error_rate))))
+        print(math.log(2) ** 2)
+        print(num_slices * (math.log(2) ** 2))
 
 
         self._setup(error_rate, num_slices, bits_per_slice, capacity, 0)
@@ -48,11 +48,11 @@ class BloomFilter(object):
         self.bitarray.setall(False)
 
     def make_hashfuncs(self, num_slices, num_bits):
-        print 'here'
-        print (1 << 31)
+        print('here')
+        print((1 << 31))
 
-        print 'here'
-        print (1 << 15)
+        print('here')
+        print((1 << 15))
 
         if num_bits >= (1 << 31):
             fmt_code, chunk_size = 'Q', 8
@@ -61,8 +61,8 @@ class BloomFilter(object):
         else:
             fmt_code, chunk_size = 'H', 2
 
-        print 'fmt_code'
-        print fmt_code
+        print('fmt_code')
+        print(fmt_code)
 
         total_hash_bits = 8 * num_slices * chunk_size
         if total_hash_bits > 384:

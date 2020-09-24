@@ -92,7 +92,7 @@ class AbstractNN:
         tmp_res = np.mat(input_key) * np.mat(self.weights[0]) + np.mat(self.bias[0])
         for i in range(1, len(self.core_nums) - 1):
             tmp_res = np.mat(tmp_res) * np.mat(self.weights[i]) + np.mat(self.bias[i])
-        return int(round(tmp_res[0][0]))
+        return int(round(tmp_res.item(0,0)))
 
 # Netural Network Model
 class TrainedNN:

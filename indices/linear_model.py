@@ -18,7 +18,7 @@ class LinearModel:
 
   def predict(self, input_key):
     test_X = [[input_key]]
-    return int(round(self.model.predict(test_X)))
+    return int(round(self.model.predict(test_X)[0]))
 
   def set_error(self, test_X, test_Y):
     self.mean_err = self.model.score(self.train_X, self.train_Y)

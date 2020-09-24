@@ -201,8 +201,8 @@ def b_tree_main(path, page_size):
   #   range_min = min(range_min, data.ix[i, 0])
   #   range_max = max(range_max, data.ix[i, 0])
 
-  print "B-Tree size = " + str(total_data_size)
-  print "Page size = " + str(btree.keys_per_node)
+  print("B-Tree size = " + str(total_data_size))
+  print("Page size = " + str(btree.keys_per_node))
 
   
 
@@ -211,7 +211,7 @@ def b_tree_main(path, page_size):
     btree.insert(Item(data.ix[i, 0], data.ix[i, 1]))
   model_end_time = datetime.datetime.now()
 
-  print "Lookup in progress!"
+  print("Lookup in progress!")
 
   start_time = datetime.datetime.now()
   for x in range(test_data_size):
@@ -221,8 +221,8 @@ def b_tree_main(path, page_size):
 
   end_time = datetime.datetime.now()
 
-  print "Time taken for B-Tree construction:\t" + str(model_end_time - model_start_time) + " seconds"
-  print "Time taken for B-Tree lookup:\t" + str(end_time - start_time) + " seconds"
+  print("Time taken for B-Tree construction:\t" + str(model_end_time - model_start_time) + " seconds")
+  print("Time taken for B-Tree lookup:\t" + str(end_time - start_time) + " seconds")
 
 # Pass path of file in argv[1] and page size in argv[2]
 if __name__ == '__main__':
